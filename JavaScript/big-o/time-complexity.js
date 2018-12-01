@@ -76,11 +76,17 @@ function bubbleSortArray(arr) {
  *
  * Time complexity doubles with each addition to the input data set.
  *
- * @param {int} n -
+ * @param {int} i - index of value in fibonacci sequence array
+ * @return {int} - fibonacci sequence value
  */
-function fibonacci() {
+function fibonacci(i) {
+    if (i <=1) return 1;
 
+    // there are iterative solutions with better time complexity, but this is an example of O(2ⁿ)
+    return fibonacci(i - 1) + fibonacci(i - 2);
 }
+
+
 
 
 // TODO
