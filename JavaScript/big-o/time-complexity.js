@@ -7,13 +7,14 @@
 /**
  * Test Data
  */
-const testArray = [9, 2, 5, 6, 4, 3, 7, 12, 12, 10, 1, 8, 38, 27, 0];
+const unsortedArray = [9, 2, 5, 6, 4, 3, 7, 12, 10, 1, 8, 38, 0, 58, 10, 12];
+const sortedArray = [0, 1, 3, 4, 5, 6, 7, 8, 10, 11, 12, 14, 15, 17, 19, 20]
 
 
 /**
  * O(1) - Constant Time
  *
- * Time complexity will always remain constant reagardless of input.
+ * Steps to completion will always remain constant reagardless of input.
  *
  * @param {array} arr - array of items
  * @param {int} i - index of an item
@@ -26,7 +27,7 @@ function getItem(arr, i) {
 /**
  * O(n) - Linear Time
  *
- * Time complexity grows as the number of items that needs to be iterated over grows.
+ * Steps to completion grows proportionally as the input grows.
  *
  * @param {array} arr - array of items
  * @param {int} n - numerical element in an array
@@ -43,8 +44,8 @@ function getItemIndex(arr, n) {
 /**
  * O(n²) - Quadratic Time
  *
- * Time complexity grows exponentially as the input grows.
- * 2 nested loops result in O(n²), 3 nested loops result in O(n³), etc.
+ * Steps to completion grows exponentially as the input grows.
+ * E.g. 2 nested loops result in O(n²), 3 nested loops result in O(n³), etc.
  *
  * @param {array} arr - array of integers
  * @return {array} - array sorted in ascending order
@@ -74,7 +75,7 @@ function bubbleSortArray(arr) {
 /**
  * O(2ⁿ) - Exponential Time
  *
- * Time complexity doubles with each addition to the input data set.
+ * Steps to completion doubles with each addition to the input data set.
  *
  * @param {int} i - index of value in fibonacci sequence array
  * @return {int} - fibonacci sequence value
@@ -86,9 +87,43 @@ function fibonacci(i) {
     return fibonacci(i - 1) + fibonacci(i - 2);
 }
 
+/**
+ * O(log n) - Logarithmic Time
+ *
+ * Steps to completion are decreased by some factor with each step.
+ *
+ * @param {array} arr - array of sorted items
+ * @param {int} n - value of element in sorted array
+ * @return {int} - index of value in sorted array
+ */
+
+function binarySearch(arr, n) {
+    let lowIndex = 0,
+        highIndex = arr.length - 1,
+        midIndex;
+
+    // iterate over the array until we find the item, or until there is only 1 item left to check
+    while (lowIndex <= highIndex) {
+
+        // use Math.ceil() to ensure that midIndex is not a floating point number
+        midIndex = Math.ceil((lowIndex + highIndex) / 2);
+
+        // steps to comletion are halved each time we adjust high or low index
+        if (arr[midIndex] > n) {
+            highIndex = midIndex - 1;
+        } else if (arr[midIndex] < n) {
+            lowIndex = midIndex + 1;
+        } else {
+            return midIndex;
+        }
+    }
+
+    // let the user know if n isn't present in arr
+    console.log(n + ' is not in the array.');
+}
 
 
+binarySearch(sortedArray, 300);
 
 // TODO
-// O(log n)
-// O(n log n)
+// O(n log n) - merge sort
