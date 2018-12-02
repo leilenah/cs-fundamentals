@@ -122,8 +122,53 @@ function binarySearch(arr, n) {
     console.log(n + ' is not in the array.');
 }
 
+/**
+ * O(n log n) - Quasilinear Time
+ *
+ * Number of operations is determined by n, and each of those operations has O(log n) time complexity.
+ *
+ * @param {array} arr - array of unsorted items
+ * @return {array} - array of sorted items
+ */
+function mergeSort(arr) {
+    if (arr.length == 1) {
+        return arr;
+    }
 
-binarySearch(sortedArray, 300);
+    // split the array into two sections
+    const middleIndex = Math.floor(arr.length / 2),
+          leftArray = arr.slice(0, middleIndex),
+          rightArray = arr.slice(middleIndex);
 
-// TODO
-// O(n log n) - merge sort
+    // merge helper with merge and sort the left and right sides
+    return merge(mergeSort(leftArray), mergeSort(rightArray));
+}
+
+
+function merge(leftArray, rightArray) {
+    let mergedArray = [],
+        leftoverArray = [],
+        leftIndex = 0,
+        rightIndex = 0;
+
+    // compare the left array to the right array one index at a time
+    while (leftIndex < leftArray.length && rightIndex < rightArray.length) {
+
+        // if element in the left array is smaller, push it into our merged array
+        if (leftArray[leftIndex] < rightArray[rightIndex]) {
+            mergedArray.push(leftArray[leftIndex])
+            leftIndex++
+
+        // if element in the right array is smaller, push it into our merged array
+        } else {
+            mergedArray.push(rightArray[rightIndex]);
+            rightIndex++
+        }
+    }
+
+    // combine the leftover values from the left array and right array into one
+    leftoverArray = leftArray.slice(leftIndex).concat(rightArray.slice(rightIndex));
+
+    // return the merged + leftover array
+    return mergedArray.concat(leftoverArray);
+}
