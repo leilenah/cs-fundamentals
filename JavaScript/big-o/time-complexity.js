@@ -144,7 +144,6 @@ function mergeSort(arr) {
     return merge(mergeSort(leftArray), mergeSort(rightArray));
 }
 
-
 function merge(leftArray, rightArray) {
     let mergedArray = [],
         leftoverArray = [],
