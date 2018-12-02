@@ -17,12 +17,19 @@
  * @param {int} size - size of array
  */
 function buildArray(size) {
-    const arr = [],
-          counter = 1;
+    const arr = [];
+    let counter = 1;
+
+    while (counter <= size) {
+        arr.push(counter);
+        counter++;
+    }
+
+    return arr;
 }
 
 
-buildArray(3);
+console.log(buildArray(3));
 
 
 
