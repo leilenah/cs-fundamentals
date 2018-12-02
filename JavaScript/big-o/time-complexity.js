@@ -98,9 +98,9 @@ function fibonacci(i) {
  */
 
 function binarySearch(arr, n) {
-    let lowIndex = 0,
-        highIndex = arr.length - 1,
-        midIndex;
+    let lowIndex = 0;
+    let highIndex = arr.length - 1;
+    let midIndex;
 
     // iterate over the array until we find the item, or until there is only 1 item left to check
     while (lowIndex <= highIndex) {
