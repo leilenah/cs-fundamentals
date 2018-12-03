@@ -36,7 +36,5 @@
  *       Implementation      //
  * ------------------------- //
  *
- * Below is an implementation of an adjacency list graph.
+ * Link: https://www.geeksforgeeks.org/implementation-graph-javascript/
  */
-
-// Link: https://www.geeksforgeeks.org/implementation-graph-javascript/
