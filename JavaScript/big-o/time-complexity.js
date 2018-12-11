@@ -97,6 +97,7 @@ function fibonacci(i) {
  * @return {int} - index of value in sorted array
  */
 
+ // to do the search recursively, make mid index and high index params
 function binarySearch(arr, n) {
     let lowIndex = 0;
     let highIndex = arr.length - 1;
@@ -140,7 +141,7 @@ function mergeSort(arr) {
           leftArray = arr.slice(0, middleIndex),
           rightArray = arr.slice(middleIndex);
 
-    // merge helper with merge and sort the left and right sides
+    // merge helper will merge and sort the left and right sides
     return merge(mergeSort(leftArray), mergeSort(rightArray));
 }
 
