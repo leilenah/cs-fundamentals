@@ -14,6 +14,52 @@ const str = 'hellodarkness darknessmy oldfriend';
 
 
 /**
+ * reverse()
+ *
+ * Reverse elements in an array.
+ */
+strList.sort(); // first sort
+strList.reverse(); // then reverse
+console.log(strList);
+
+
+/**
+ * sort()
+ * sort(comparisonFunction)
+ *
+ * Sort an array alphabetically (default).
+ * Sort an array numerically (using comparison function).
+ * Modifies the original array.
+ */
+strList.sort();
+
+intList.sort((a, b) => {
+  return a - b; // ascending sort
+});
+
+intList.sort((a, b) => {
+  return b - a; // descending sort
+});
+
+console.log(intList);
+
+
+/**
+ * find()
+ *
+ * Return the first item in the array that passes a certain criteria.
+ * The rest of the array will not be checked.
+ *
+ * If you need all items in an array to be checked, find() would not be a good solution.
+ */
+
+const greaterThan8 = intList.find((item, i) => {
+  return item > 8;
+});
+console.log(greaterThan8);
+
+
+/**
  * includes()
  *
  * Check if an array contains a specific item.
