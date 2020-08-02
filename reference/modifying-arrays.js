@@ -1,5 +1,5 @@
 /**
- * Resources
+ * Modifying Arrays
  *
  * How to Manipulate Arrays in JavaScript: https://www.freecodecamp.org/news/manipulating-arrays-in-javascript/
  * JavaScript Array Methods: https://www.w3schools.com/js/js_array_methods.asp
