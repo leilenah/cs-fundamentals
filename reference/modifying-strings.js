@@ -5,6 +5,24 @@
  */
 
 /**
+ * includes()
+ *
+ * Return true if a string includes a substring.
+ */
+const string = "This is Halloween";
+console.log(string.includes("is"));
+
+
+/**
+ * charAt()
+ *
+ * Returns the character at the specified index in a string.
+ */
+const string = "leilenah";
+console.log(string.charAt(1));
+
+
+/**
  * replace()
  *
  * Replace all occurances of a substring with another substring.
