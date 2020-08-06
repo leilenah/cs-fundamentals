@@ -16,44 +16,29 @@
  * This can be done using indexOf() or Binary Search.
  */
 function binarySearch(array, item) {
-
-  // we will flip this flag to true if we find our item
-  let itemFound = false;
-
-  // initialize our high, low and mid index values
-  let lowInxex = 0;
+  let lowIndex = 0;
   let highIndex = array.length - 1;
-  let midIndex;
 
-  // initialize our current guessed item
-  let guessedItem;
+  while (lowIndex <= highIndex) {
+    const midIndex = Math.floor((lowIndex + highIndex) / 2);
+    const guessedItem = array[midIndex];
 
-  while (lowInxex <= highIndex) {
-    midIndex = Math.floor((lowInxex + highIndex) / 2);
-    guessedItem = array[midIndex];
-
-    // if we found the item, exit the loop
     if (guessedItem === item) {
-      console.log(`Item found at index ${midIndex}`);
-      itemFound = true;
-      return;
+      console.log(`Item found at ${midIndex}`);
+      return midIndex;
     }
 
-    // if the item is lower than our guessed item, throw away the larger half of our array
-    if (item < guessedItem) {
-      highIndex = midIndex - 1;
-
-    // if the item is higher than our guessed item, throw away the smaller half of our array
+    if (item > guessedItem) {
+      // get rid of the left side of the array
+      lowIndex = midIndex + 1;
     } else {
-      lowInxex = midIndex + 1;
+      // get rid of the right side of the array
+      highIndex = midIndex - 1;
     }
   }
 
-  // if our item was not found, let the user know
-  if (!itemFound) {
-    console.log('Item not found.');
-  }
-};
+  console.log("Item not found");
+}
 
 const myList = [1, 2, 3, 44, 45, 46, 77, 109, 200, 211, 300, 312, 400, 600, 727, 884, 1000];
 binarySearch(myList, 44);

@@ -156,21 +156,21 @@ console.log(filteredArray);
 
 
 /**
- * lastIndexOf(item)
- *
- * Return the last index of an item in an array.
- */
-const lastMyIndex = strList.lastIndexOf('my');
-console.log(lastMyIndex);
-
-
-/**
  * indexOf(item)
  *
  * Returns the first index of an item in an array.
  */
 const friendIndex = strList.indexOf('friend');
 console.log(friendIndex);
+
+
+/**
+ * lastIndexOf(item)
+ *
+ * Return the last index of an item in an array.
+ */
+const lastMyIndex = strList.lastIndexOf('my');
+console.log(lastMyIndex);
 
 
 /**

@@ -48,7 +48,6 @@ function mergeSort(array) {
   );
 }
 
-
 const items = [1, 2, 393, 494, 0, -838, 29, 45, 78, 14, 19, 22, 102, 2000, 3, 7, 8, 20];
 const sortedItems = mergeSort(items);
 console.log(sortedItems);

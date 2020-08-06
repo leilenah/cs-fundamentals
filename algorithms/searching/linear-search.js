@@ -11,23 +11,18 @@
  * Log the index of number 15 to standard output.
  */
 function findTargetIndex(array, target) {
-  let targetFound = false;
-
-  array.forEach((item, i) => {
-    if (item === target) {
+  for (const i in array) {
+    if (array[i] === target) {
       console.log(`${target} found at index ${i}.`);
-      targetFound = true;
-      return; // break the loop
+      return;
     }
-  });
-
-  if (!targetFound) {
-    console.log(`${target} not found.`);
   }
+
+  console.log(`${target} not found.`);
 };
 
 const items = [2, 5, 3, 7, 8, 10, 15, 18, 24, 111, 12, 19, 87];
-findTargetIndex(items, 15);
+findTargetIndex(items, 22);
 
 
 /**
