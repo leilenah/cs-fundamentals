@@ -16,16 +16,8 @@
  * Option 1
  */
 function isPalindrome(string) {
-  const cleanedString =
-    string
-      .trim()
-      .toLowerCase();
-
-  const reversedString =
-    cleanedString
-      .split("")
-      .reverse()
-      .join("");
+  string = string.trim().toLowerCase();
+  const reversedString = string.split("").reverse().join("");
 
   console.log(string === reversedString);
   return string === reversedString;
@@ -55,7 +47,7 @@ function isPalindrome(string) {
 
   // loop over the first half and compare it to the second half
   // opt for a for loop here instead of forEach beacuse you can't break out of a forEach
-  for (i = 0; i < left.length; i++) {
+  for (const i in left) {
     if (left[i] !== right[i]) {
       console.log(false);
       return false;

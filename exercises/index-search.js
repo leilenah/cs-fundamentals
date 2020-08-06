@@ -6,13 +6,10 @@
 function getPrevIndex(array, int) {
   let lowIndex = 0;
   let highIndex = array.length - 1;
-  let midIndex;
-
-  let guessedInt;
 
   while (lowIndex <= highIndex) {
-    midIndex = Math.floor((lowIndex + highIndex) / 2);
-    guessedInt = array[midIndex];
+    const midIndex = Math.floor((lowIndex + highIndex) / 2);
+    const guessedInt = array[midIndex];
 
     if (guessedInt === int) {
       const prevIndex = midIndex - 1;

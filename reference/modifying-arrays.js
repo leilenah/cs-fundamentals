@@ -224,7 +224,7 @@ console.log(strList);
 /**
  * shift()
  *
- * Remove the first item if an array.
+ * Remove the first item of an array.
  * Return the removed item.
  */
 strList.shift();
